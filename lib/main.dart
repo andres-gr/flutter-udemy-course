@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           brightness: Brightness.light,
           primarySwatch: Colors.lime,
-          accentColor: Colors.deepPurpleAccent),
+          accentColor: Colors.deepPurpleAccent
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Easy List'),
