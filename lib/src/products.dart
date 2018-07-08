@@ -4,8 +4,12 @@ import 'package:udemy_course/src/pages/product.dart';
 
 class Products extends StatelessWidget {
   final List<Map<String, String>> products;
+  final Function deleteProduct;
 
-  Products([this.products = const []]) {
+  Products({
+    this.deleteProduct,
+    this.products = const [],
+  }) {
     print('[Products Stateless] constructor');
   }
 
@@ -20,7 +24,8 @@ class Products extends StatelessWidget {
             children: <Widget>[
               FlatButton(
                 child: const Text('Details'),
-                onPressed: () => Navigator.push(
+                onPressed: () => Navigator
+                        .push<bool>(
                       context,
                       MaterialPageRoute(
                         builder: (BuildContext context) => ProductPage(
@@ -28,7 +33,14 @@ class Products extends StatelessWidget {
                               title: products[index]['title'],
                             ),
                       ),
-                    ),
+                    )
+                        .then((bool result) {
+                      if (result) {
+                        deleteProduct(
+                          index: index,
+                        );
+                      }
+                    }),
               ),
             ],
           ),

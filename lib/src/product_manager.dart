@@ -35,6 +35,12 @@ class _ProductManagerState extends State<ProductManager> {
     });
   }
 
+  void _deleteProduct({int index}) {
+    setState(() {
+      _products.removeAt(index);
+    });
+  }
+
   @override
   void didUpdateWidget(ProductManager oldWidget) {
     print('[Product Manager State] did update');
@@ -53,7 +59,10 @@ class _ProductManagerState extends State<ProductManager> {
           margin: EdgeInsets.all(10.0),
         ),
         Expanded(
-          child: Products(_products),
+          child: Products(
+            deleteProduct: _deleteProduct,
+            products: _products,
+          ),
         ),
       ],
     );
