@@ -6,7 +6,7 @@ import 'package:udemy_course/products.dart';
 class ProductManager extends StatefulWidget {
   final String startProduct;
 
-  ProductManager({this.startProduct = 'Sweets Tester'}) {
+  ProductManager({this.startProduct}) {
     print('[Product Manager Stateful] constructor');
   }
 
@@ -23,7 +23,9 @@ class _ProductManagerState extends State<ProductManager> {
   @override
   void initState() {
     print('[Product Manager State] init');
-    _products.add(widget.startProduct);
+    if (widget.startProduct != null) {
+      _products.add(widget.startProduct);
+    }
     super.initState();
   }
 
@@ -50,7 +52,9 @@ class _ProductManagerState extends State<ProductManager> {
             handlePress: _addProduct,
           ),
         ),
-        Products(_products),
+        Expanded(
+          child: Products(_products),
+        ),
       ],
     );
   }
