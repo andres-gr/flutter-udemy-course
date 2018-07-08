@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ProductControl extends StatelessWidget {
   final Function handlePress;
-  
+
   ProductControl({this.handlePress});
 
   @override
@@ -11,13 +11,18 @@ class ProductControl extends StatelessWidget {
       color: Theme.of(context).accentColor,
       onPressed: () {
         handlePress(
-          product: 'New product',
+          product: {
+            'imageUrl': 'assets/food.jpg',
+            'title': 'Choco',
+          },
         );
       },
       child: Text(
         'Add Product',
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(
+          color: Colors.white,
+        ),
       ),
     );
-  }}
-
+  }
+}

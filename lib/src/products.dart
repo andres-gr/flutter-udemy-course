@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:udemy_course/src/pages/product.dart';
 
 class Products extends StatelessWidget {
-  final List<String> products;
+  final List<Map<String, String>> products;
 
   Products([this.products = const []]) {
     print('[Products Stateless] constructor');
@@ -13,19 +13,22 @@ class Products extends StatelessWidget {
     return Card(
       child: Column(
         children: <Widget>[
-          Image.asset('assets/food.jpg'),
-          Text(products[index]),
+          Image.asset(products[index]['imageUrl']),
+          Text(products[index]['title']),
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
               FlatButton(
+                child: const Text('Details'),
                 onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => ProductPage(),
+                        builder: (BuildContext context) => ProductPage(
+                              imageUrl: products[index]['imageUrl'],
+                              title: products[index]['title'],
+                            ),
                       ),
                     ),
-                child: Text('Details'),
               ),
             ],
           ),
