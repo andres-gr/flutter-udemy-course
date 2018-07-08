@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'product_manager.dart';
+import 'package:udemy_course/src/pages/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,12 +13,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.lime,
           accentColor: Colors.deepPurpleAccent
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Easy List'),
-        ),
-        body: ProductManager(),
-      ),
+      home: HomePage(),
     );
   }
 }

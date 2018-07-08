@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:udemy_course/product_control.dart';
-import 'package:udemy_course/products.dart';
+import 'package:udemy_course/src/product_control.dart';
+import 'package:udemy_course/src/products.dart';
 
 class ProductManager extends StatefulWidget {
   final String startProduct;
