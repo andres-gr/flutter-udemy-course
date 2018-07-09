@@ -22,16 +22,16 @@ class ProductPage extends StatelessWidget {
           children: <Widget>[
             Image.asset(imageUrl),
             Padding(
-              child: Text(title),
               padding: const EdgeInsets.all(10.0),
+              child: Text(title),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: RaisedButton(
-                child: const Text('DELETE'),
                 color: Theme.of(context).accentColor,
-                onPressed: () => Navigator.pop(context, true),
                 textColor: Colors.white,
+                child: const Text('DELETE'),
+                onPressed: () => Navigator.pop(context, true),
               ),
             )
           ],

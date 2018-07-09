@@ -53,10 +53,10 @@ class _ProductManagerState extends State<ProductManager> {
     return Column(
       children: <Widget>[
         Container(
+          margin: EdgeInsets.all(10.0),
           child: ProductControl(
             handlePress: _addProduct,
           ),
-          margin: EdgeInsets.all(10.0),
         ),
         Expanded(
           child: Products(
