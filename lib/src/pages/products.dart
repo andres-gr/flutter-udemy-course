@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:udemy_course/src/product_manager.dart';
+import 'package:udemy_course/src/pages/products_admin.dart';
 
 class ProductsPage extends StatelessWidget {
   @override
@@ -20,7 +21,14 @@ class ProductsPage extends StatelessWidget {
               ),
               ListTile(
                 title: const Text('Manage Products'),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => ProductsAdminPage(),
+                    ),
+                  );
+                },
               ),
             ],
           ),

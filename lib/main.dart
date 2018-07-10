@@ -8,12 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: AuthPage(),
       theme: ThemeData(
         accentColor: Colors.deepPurpleAccent,
         brightness: Brightness.light,
         primarySwatch: Colors.lime,
       ),
+      home: AuthPage(),
     );
   }
 }
