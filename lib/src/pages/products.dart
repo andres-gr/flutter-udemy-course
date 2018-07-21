@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:udemy_course/src/product_manager.dart';
+import '../product_manager.dart';
 
 class ProductsPage extends StatelessWidget {
-  final List<Map<String, String>> products;
-  final Function addProduct;
-  final Function deleteProduct;
+  final List<Map<String, dynamic>> products;
 
   ProductsPage({
-    this.addProduct,
-    this.deleteProduct,
     this.products,
   });
 
@@ -41,8 +37,6 @@ class ProductsPage extends StatelessWidget {
         ),
       ),
       body: ProductManager(
-        addProduct: addProduct,
-        deleteProduct: deleteProduct,
         products: products,
       ),
     );
