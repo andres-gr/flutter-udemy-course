@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:udemy_course/src/pages/products.dart';
 import 'package:udemy_course/src/pages/product_create.dart';
 import 'package:udemy_course/src/pages/product_list.dart';
 

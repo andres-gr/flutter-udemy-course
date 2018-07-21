@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:udemy_course/src/pages/products.dart';
-
 class AuthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
