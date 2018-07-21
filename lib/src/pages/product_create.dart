@@ -11,11 +11,14 @@ class ProductCreatePageState extends State<ProductCreatePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
+    return Container(
+      margin: const EdgeInsets.all(16.0),
       child: Column(
         children: <Widget>[
           TextField(
+            decoration: InputDecoration(
+              labelText: 'Product Title',
+            ),
             onChanged: (String value) {
               setState(() {
                 titleValue = value;
@@ -24,6 +27,9 @@ class ProductCreatePageState extends State<ProductCreatePage> {
           ),
           TextField(
             maxLines: 4,
+            decoration: InputDecoration(
+              labelText: 'Product Description',
+            ),
             onChanged: (String value) {
               setState(() {
                 descriptionValue = value;
@@ -32,6 +38,9 @@ class ProductCreatePageState extends State<ProductCreatePage> {
           ),
           TextField(
             keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              labelText: 'Product Price',
+            ),
             onChanged: (String value) {
               setState(() {
                 priceValue = double.parse(value);
