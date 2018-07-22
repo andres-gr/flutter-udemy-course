@@ -45,7 +45,7 @@ class ProductsAdminPage extends StatelessWidget {
                   onTap: () {
                     Navigator.pushReplacementNamed(
                       context,
-                      '/',
+                      '/products',
                     );
                   },
                 ),

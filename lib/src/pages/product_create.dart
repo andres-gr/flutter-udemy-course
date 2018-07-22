@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 class ProductCreatePage extends StatefulWidget {
   final Function addProduct;
 
-  ProductCreatePage({
+  const ProductCreatePage({
     this.addProduct,
   });
 
-  ProductCreatePageState createState() => ProductCreatePageState();
+  _ProductCreatePageState createState() => _ProductCreatePageState();
 }
 
-class ProductCreatePageState extends State<ProductCreatePage> {
-  String titleValue;
-  String descriptionValue;
-  double priceValue;
+class _ProductCreatePageState extends State<ProductCreatePage> {
+  String _titleValue;
+  String _descriptionValue;
+  double _priceValue;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class ProductCreatePageState extends State<ProductCreatePage> {
             ),
             onChanged: (String value) {
               setState(() {
-                titleValue = value;
+                _titleValue = value;
               });
             },
           ),
@@ -38,7 +38,7 @@ class ProductCreatePageState extends State<ProductCreatePage> {
             ),
             onChanged: (String value) {
               setState(() {
-                descriptionValue = value;
+                _descriptionValue = value;
               });
             },
           ),
@@ -49,7 +49,7 @@ class ProductCreatePageState extends State<ProductCreatePage> {
             ),
             onChanged: (String value) {
               setState(() {
-                priceValue = double.parse(value);
+                _priceValue = double.parse(value);
               });
             },
           ),
@@ -62,9 +62,9 @@ class ProductCreatePageState extends State<ProductCreatePage> {
             child: const Text('Save'),
             onPressed: () {
               final Map<String, dynamic> product = {
-                'title': titleValue,
-                'description': descriptionValue,
-                'price': priceValue,
+                'title': _titleValue,
+                'description': _descriptionValue,
+                'price': _priceValue,
                 'imageUrl': 'assets/food.jpg',
               };
               widget.addProduct(
@@ -72,7 +72,7 @@ class ProductCreatePageState extends State<ProductCreatePage> {
               );
               Navigator.pushReplacementNamed(
                 context,
-                '/',
+                '/products',
               );
             },
           ),

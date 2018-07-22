@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'src/pages/auth.dart';
 import 'src/pages/product.dart';
 import 'src/pages/products.dart';
 import 'src/pages/products_admin.dart';
@@ -36,9 +37,9 @@ class _MyAppState extends State<MyApp> {
         brightness: Brightness.light,
         primarySwatch: Colors.lime,
       ),
-      // home: AuthPage(),
+      home: AuthPage(),
       routes: {
-        '/': (BuildContext context) => ProductsPage(
+        '/products': (BuildContext context) => ProductsPage(
               products: _products,
             ),
         '/admin': (BuildContext context) => ProductsAdminPage(
