@@ -53,7 +53,12 @@ class ProductCreatePageState extends State<ProductCreatePage> {
               });
             },
           ),
+          SizedBox(
+            height: 10.0,
+          ),
           RaisedButton(
+            color: Theme.of(context).accentColor,
+            textColor: Colors.white,
             child: const Text('Save'),
             onPressed: () {
               final Map<String, dynamic> product = {
@@ -64,6 +69,10 @@ class ProductCreatePageState extends State<ProductCreatePage> {
               };
               widget.addProduct(
                 product: product,
+              );
+              Navigator.pushReplacementNamed(
+                context,
+                '/',
               );
             },
           ),
