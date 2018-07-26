@@ -8,6 +8,7 @@ class AuthPage extends StatefulWidget {
 class _AuthPageState extends State<AuthPage> {
   String _email = '';
   String _password = '';
+  bool _terms = false;
   bool _valid = false;
 
   void _pressLogin() {
@@ -19,13 +20,13 @@ class _AuthPageState extends State<AuthPage> {
 
   void _checkValid() {
     if (!_valid) {
-      if (_email != '' && _password != '') {
+      if (_email != '' && _password != '' && _terms) {
         setState(() {
           _valid = true;
         });
       }
     } else {
-      if (_email == '' || _password == '') {
+      if (_email == '' || _password == '' || !_terms) {
         setState(() {
           _valid = false;
         });
@@ -68,6 +69,16 @@ class _AuthPageState extends State<AuthPage> {
                     _password = value;
                   });
                   _checkValid();
+                },
+              ),
+              SwitchListTile(
+                title: const Text('Accept Terms'),
+                value: _terms,
+                onChanged: (bool value) {
+                  setState(() {
+                    _terms = value;
+                    _checkValid();
+                  });
                 },
               ),
               SizedBox(
