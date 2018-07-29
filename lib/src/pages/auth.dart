@@ -60,6 +60,8 @@ class _AuthPageState extends State<AuthPage> {
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   labelText: 'Email',
+                  filled: true,
+                  fillColor: Colors.white,
                 ),
                 onChanged: (String value) {
                   setState(() {
@@ -68,11 +70,16 @@ class _AuthPageState extends State<AuthPage> {
                   _checkValid();
                 },
               ),
+              SizedBox(
+                height: 10.0,
+              ),
               TextField(
                 keyboardType: TextInputType.text,
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Password',
+                  filled: true,
+                  fillColor: Colors.white,
                 ),
                 onChanged: (String value) {
                   setState(() {
@@ -81,15 +88,23 @@ class _AuthPageState extends State<AuthPage> {
                   _checkValid();
                 },
               ),
-              SwitchListTile(
-                title: const Text('Accept Terms'),
-                value: _terms,
-                onChanged: (bool value) {
-                  setState(() {
-                    _terms = value;
-                    _checkValid();
-                  });
-                },
+              SizedBox(
+                height: 10.0,
+              ),
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
+                child: SwitchListTile(
+                  title: const Text('Accept Terms'),
+                  value: _terms,
+                  onChanged: (bool value) {
+                    setState(() {
+                      _terms = value;
+                      _checkValid();
+                    });
+                  },
+                ),
               ),
               SizedBox(
                 height: 10.0,
