@@ -41,8 +41,18 @@ class _AuthPageState extends State<AuthPage> {
         title: const Text('Login'),
       ),
       body: Center(
-        child: Padding(
+        child: Container(
           padding: const EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.5),
+                BlendMode.dstATop,
+              ),
+              image: AssetImage('assets/background.jpg'),
+            ),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

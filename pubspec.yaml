@@ -43,6 +43,7 @@ flutter:
 
   assets:
     - assets/food.jpg
+    - assets/background.jpg
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.io/assets-and-images/#from-packages
