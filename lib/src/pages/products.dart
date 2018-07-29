@@ -24,6 +24,9 @@ class ProductsPage extends StatelessWidget {
                 title: const Text('Choose'),
               ),
               ListTile(
+                leading: Icon(
+                  Icons.edit,
+                ),
                 title: const Text('Manage Products'),
                 onTap: () {
                   Navigator.pushReplacementNamed(

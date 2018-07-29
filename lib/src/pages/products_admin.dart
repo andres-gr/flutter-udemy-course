@@ -41,6 +41,9 @@ class ProductsAdminPage extends StatelessWidget {
                   title: const Text('Admin Products'),
                 ),
                 ListTile(
+                  leading: Icon(
+                    Icons.shop,
+                  ),
                   title: const Text('Products List'),
                   onTap: () {
                     Navigator.pushReplacementNamed(
