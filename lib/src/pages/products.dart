@@ -14,6 +14,14 @@ class ProductsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Easy List'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.favorite,
+            ),
+            onPressed: () {},
+          )
+        ],
       ),
       drawer: Drawer(
         child: Center(
