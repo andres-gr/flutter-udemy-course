@@ -87,6 +87,7 @@ class ProductPage extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         decoration: BoxDecoration(
                           color: Theme.of(context).accentColor,
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Text(
                           '\$ ${price.toString()}',
