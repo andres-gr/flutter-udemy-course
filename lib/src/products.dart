@@ -9,7 +9,10 @@ class Products extends StatelessWidget {
     print('[Products Stateless] constructor');
   }
 
-  Widget _buildProductItem(BuildContext context, int index) {
+  Widget _buildProductItem(
+    BuildContext context,
+    int index,
+  ) {
     return Card(
       child: Column(
         children: <Widget>[

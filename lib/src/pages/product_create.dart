@@ -62,10 +62,10 @@ class _ProductCreatePageState extends State<ProductCreatePage> {
             child: const Text('Save'),
             onPressed: () {
               final Map<String, dynamic> product = {
-                'title': _titleValue,
                 'description': _descriptionValue,
-                'price': _priceValue,
                 'imageUrl': 'assets/food.jpg',
+                'price': _priceValue,
+                'title': _titleValue,
               };
               widget.addProduct(
                 product: product,
