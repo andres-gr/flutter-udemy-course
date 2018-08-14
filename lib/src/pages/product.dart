@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import '../components/elements/title_default.dart';
 
 class ProductPage extends StatelessWidget {
   final double price;
@@ -54,12 +55,8 @@ class ProductPage extends StatelessWidget {
             Image.asset(imageUrl),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Text(
-                title,
-                style: TextStyle(
-                  fontSize: 28.0,
-                  fontFamily: 'Oswald',
-                ),
+              child: TitleDefault(
+                title: title,
               ),
             ),
             Container(
