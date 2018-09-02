@@ -16,6 +16,43 @@ class ProductPage extends StatelessWidget {
     this.title,
   });
 
+  Row _buildAddressPriceRow(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Expanded(
+          flex: 1,
+          child: Center(
+            child: Container(
+              padding: const EdgeInsets.all(8.0),
+              decoration: BoxDecoration(
+                color: Theme.of(context).accentColor,
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Text(
+                '\$ ${price.toString()}',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.0,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 2,
+          child: Text(
+            description,
+            style: TextStyle(
+              fontSize: 16.0,
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
   void _showWarningDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -73,40 +110,7 @@ class ProductPage extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(8.0),
               ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Expanded(
-                    flex: 1,
-                    child: Center(
-                      child: Container(
-                        padding: const EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).accentColor,
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Text(
-                          '\$ ${price.toString()}',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Text(
-                      description,
-                      style: TextStyle(
-                        fontSize: 16.0,
-                      ),
-                    ),
-                  )
-                ],
-              ),
+              child: _buildAddressPriceRow(context),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
