@@ -97,41 +97,48 @@ class _AuthPageState extends State<AuthPage> {
 
   @override
   Widget build(BuildContext context) {
+    final double currentWidth = MediaQuery.of(context).size.width;
+    final double width = currentWidth > 760.0 ? 500.0 : currentWidth * 0.95;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
       ),
-      body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(16.0),
-          decoration: BoxDecoration(
-            image: _buildBackgroundImage(),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              _buildEmailTextField(),
-              SizedBox(
-                height: 10.0,
+      body: Container(
+        padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          image: _buildBackgroundImage(),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Container(
+              width: width,
+              child: Column(
+                children: <Widget>[
+                  _buildEmailTextField(),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  _buildPasswordTextField(),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: _buildAcceptSwitchListTile(),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  RaisedButton(
+                    child: const Text('LOGIN'),
+                    onPressed: _submitForm,
+                  ),
+                ],
               ),
-              _buildPasswordTextField(),
-              SizedBox(
-                height: 10.0,
-              ),
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-                child: _buildAcceptSwitchListTile(),
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              RaisedButton(
-                child: const Text('LOGIN'),
-                onPressed: _submitForm,
-              ),
-            ],
+            ),
           ),
         ),
       ),
